@@ -1,6 +1,7 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { idbPromise } from "../../utils/helpers";
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -39,11 +40,11 @@ const CartItem = ({ item }) => {
         <div>
           <span>Qty:</span>
           <input
-  type="number"
-  placeholder="1"
-  value={item.purchaseQuantity}
-  onChange={onChange}
-/>
+            type="number"
+            placeholder="1"
+            value={item.purchaseQuantity}
+            onChange={onChange}
+          />
           <span
             role="img"
             aria-label="trash"

@@ -1,13 +1,12 @@
-import { idbPromise } from '../../utils/helpers';
-import { useQuery } from "@apollo/react-hooks";
 import React, { useEffect } from 'react';
+import { useQuery } from "@apollo/react-hooks";
+import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
 import { QUERY_CATEGORIES } from "../../utils/queries";
-import { useStoreContext } from "../../utils/GlobalState";
+import { idbPromise } from '../../utils/helpers';
 
 function CategoryMenu() {
-  // const categories = categoryData?.categories || [];
-  // const { data: categoryData } = useQuery(QUERY_CATEGORIES);
+
   const [state, dispatch] = useStoreContext();
 
   const { categories } = state;
